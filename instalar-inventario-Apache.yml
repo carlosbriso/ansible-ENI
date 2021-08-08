@@ -1,0 +1,9 @@
+---
+- name: "Instalación del Inventario Apache"
+  hosts: ansible-03
+  become: true
+  roles:
+    - role: "apache"
+    - role: "apache-inventario"
+    - role: "apache/php"
+    - role: "mariadb"

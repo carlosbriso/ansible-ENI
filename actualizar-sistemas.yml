@@ -1,0 +1,28 @@
+---
+- name: "Gather hosts facts -> Descubrimos tipos de SS. OO."
+  hosts: all
+  gather_facts: yes
+  gather_subset: "!all"
+  tasks:
+    - name: "Hosts afectados"
+      group_by:
+        key: "{{ansible_distribution}}_{{ansible_distribution_major_version}}"
+    - debug: var=ansible_distribution,ansible_distribution_major_version
+
+- name: "Instalar epel-release"
+  hosts: "Rocky_8"
+  gather_facts: no
+  become: true
+  tasks:
+    - yum:
+        name: 'epel-release'
+        state: latest
+
+- name: "Actualiza maquinas Rocky-8"
+  hosts: "Rocky_8"
+  gather_facts: no
+  become: true
+  tasks:
+    - yum:
+        name: '*'
+        state: latest

@@ -1,0 +1,8 @@
+---
+# defaults file for roles/mediawiki/mariadb
+# Creación del esquema.
+mediawiki_db_name: "mediawiki"
+
+# Usuario por defecto.
+mediawiki_db_user: "carlos"
+mediawiki_db_password: "Carlos$52"

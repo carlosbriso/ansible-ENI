@@ -1,0 +1,11 @@
+- name: "Instala EPEL y python3"
+  hosts: ansible-03
+  gather_facts: no
+  become: true
+  tasks:
+    - yum:
+        name: 'epel-release'
+        state: latest
+    - yum:
+        name: 'python3'
+        state: latest

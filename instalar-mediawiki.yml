@@ -1,0 +1,6 @@
+- name: "Configuración de Mediawiki"
+  hosts: ansible-03
+  gather_facts: no
+  become: true
+  roles:
+    - role: "mediawiki/mariadb"

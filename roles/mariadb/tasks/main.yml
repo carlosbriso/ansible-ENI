@@ -1,0 +1,16 @@
+---
+# tasks file for roles/mariadb
+- name: "Instalar MariaDB Server"
+  yum:
+    name: "mariadb-server,python3-PyMySQL"
+    state: "installed"
+- name: "Iniciar MariaDB"
+  service:
+    name: "mariadb"
+    state: "started"
+    enabled: yes
+- name: "Firewalld para MariaDB -> 3306/tcp"
+  firewalld:
+    service: "mysql"
+    permanent: yes
+    state: enabled

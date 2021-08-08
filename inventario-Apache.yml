@@ -1,0 +1,10 @@
+---
+apache:
+  hosts:
+    ansible-03:
+      ansible_host: 192.168.122.163
+      ansible_user: carlos
+  vars:
+    php_instalar: no
+
+

@@ -1,0 +1,13 @@
+---
+# tasks file for roles/mediawiki/mariadb
+- name: "Mediawiki db -> creación"
+  mysql_db:
+    name: "{{ mediawiki_db_name }}"
+    state: "present"
+- name: "Mediawiki usuario/password"
+  mysql_user:
+          #login_user: mediawiki
+    name: "{{ mediawiki_db_user }}"
+    password: "{{ mediawiki_db_password }}"
+    priv: "{{ mediawiki_db_name }}.*:ALL"
+    state: present

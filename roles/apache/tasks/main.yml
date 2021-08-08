@@ -1,0 +1,17 @@
+---
+# Tareas de instalación para Apache.
+- name: "Instalar paquete Apache"
+  yum:
+    name: "httpd"
+    state: "present"
+- name: "Permitir conexiones http"
+  firewalld:
+    service: "http"
+    permanent: yes
+    state: enabled
+- name: "Iniciar servicio Apache"
+  service:
+    name: "httpd"
+    state: "started"
+    enabled: yes
+

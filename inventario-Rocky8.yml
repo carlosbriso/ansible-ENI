@@ -1,0 +1,12 @@
+ansible_despliegues:
+  hosts:
+    ansible-01:
+      ansible_host: 192.168.122.161
+      ansible_user: carlos
+    ansible-02:
+      ansible_host: 192.168.122.162
+      ansible_user: carlos
+    ansible-03:
+      ansible_host: 192.168.122.163
+      ansible_user: carlos
+

@@ -1,0 +1,11 @@
+---
+- debug: var=php_instalar
+- name: "Instalación de paquetes php"
+  yum: 
+    name: "php*"
+    state: "present"
+  # Si la variable php_instalar: yes -> Instalar PHP.
+  when: php_instalar | d(False) | bool
+  notify: [ "Apache Reiniciar" ]
+  #- debug: var=php_instalar
+

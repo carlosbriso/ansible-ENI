@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Máquina {{inventory_hostname}}</title>
+  </head>
+  <body>
+    <p>Esta máquina se llama {{inventory_hostname}}</p>
+    <p>He aquí la lista de direcciones:</p>
+    <ul>
+        {% for ip in ansible_all_ipv4_addresses %}
+           <li>{{ip}}</li>
+        {% endfor %}
+    </ul>
+  </body>
+</html>
+

@@ -1,0 +1,6 @@
+---
+# handlers para Apache
+- name: "Apache Reiniciar"
+  service:
+    name: "httpd"
+    state: "restarted"

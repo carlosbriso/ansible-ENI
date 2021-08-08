@@ -1,0 +1,19 @@
+---
+- name: "Configuración del Servidor Apache"
+  template:
+    src: "apache.conf.j2"
+    dest: "/etc/httpd/conf.d/inventario.conf"
+    owner: apache
+    group: apache
+  # En caso de cambio Reiniciar Apache.
+  notify: [ "Apache Reiniciar"  ]
+
+- name: "Identificación del host Servidor Apache"
+  template:
+    src: "maquinas.html.j2"
+    dest: "/var/www/html/index.html"
+    owner: apache
+    group: apache
+  # En caso de cambio Reiniciar Apache.
+  notify: [ "Apache Reiniciar"  ]
+

@@ -1,0 +1,6 @@
+---
+- name: "Instalación de MariaDB"
+  hosts: ansible-03
+  become: true
+  roles:
+    - role: "mariadb"
